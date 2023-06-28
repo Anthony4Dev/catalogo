@@ -1,3 +1,4 @@
+// ProductList.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -16,9 +17,9 @@ const ProductList = () => {
   ];
 
   return (
-    <div className="product-list">
+    <div className="product-container">
       {products.map(product => (
-        <div className="product-item" key={product.id}>
+        <div className="product-card" key={product.id}>
           <img className="product-image" src={product.image} alt={product.name} />
           <h3 className="product-name">{product.name}</h3>
           <p className="product-price">R$ {product.price.toFixed(2)}</p>

@@ -1,9 +1,9 @@
 import React from 'react';
 import ProductDetail from './ProductDetail';
 
-const ProductListing = ({ products }) => {
+function ProductListing({ products }) {
   return (
-    <div className="product-listing">
+    <div>
       {products.map((product) => (
         <ProductDetail key={product.id} product={product} />
       ))}
