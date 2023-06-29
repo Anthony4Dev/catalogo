@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
 
@@ -14,6 +14,10 @@ function App() {
 
   const handleNavItemClick = (category) => {
     setSelectedCategory(category);
+  };
+
+  const handleRemoveFilter = () => {
+    setSelectedCategory('');
   };
 
   return (
@@ -38,6 +42,14 @@ function App() {
             </li>
           </ul>
         </nav>
+        {selectedCategory && (
+          <div className="selected-category">
+            Filtro aplicado: {selectedCategory.replace(/%7E/g, '~').charAt(0).toUpperCase() + selectedCategory.slice(1)}
+            <button className="remove-filter" onClick={handleRemoveFilter}>
+              Remover Filtro
+            </button>
+          </div>
+        )}
         <Routes>
           <Route
             path="/"
