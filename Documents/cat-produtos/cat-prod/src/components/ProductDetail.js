@@ -14,7 +14,6 @@ const ProductDetail = () => {
       description: 'Este é um sutiã confortável e elegante, perfeito para o dia a dia.',
     },
     { id: 2, name: 'Calcinha', price: 19.90, category: 'lingeries', image: 'https://http2.mlstatic.com/D_NQ_NP_2X_971684-MLB48848823458_012022-F.webp', description: 'Esta é uma calcinha confortável e elegante, perfeito para o dia a dia.' },
-    // Adicione mais produtos aqui...
   ];
 
   const product = products.find(product => product.id === parseInt(id));

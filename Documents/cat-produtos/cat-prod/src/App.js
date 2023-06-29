@@ -6,9 +6,14 @@ import ProductDetail from './components/ProductDetail';
 
 function App() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const toggleNav = () => {
     setIsNavExpanded(!isNavExpanded);
+  };
+
+  const handleNavItemClick = (category) => {
+    setSelectedCategory(category);
   };
 
   return (
@@ -22,13 +27,22 @@ function App() {
             Menu
           </button>
           <ul id="nav-items" className={!isNavExpanded ? 'nav-closed' : ''}>
-            <li className="items">Lingeries</li>
-            <li className="items">Conjuntos</li>
-            <li className="items">Sutiãs</li>
+            <li className="items" onClick={() => handleNavItemClick('lingeries')}>
+              Lingeries
+            </li>
+            <li className="items" onClick={() => handleNavItemClick('conjuntos')}>
+              Conjuntos
+            </li>
+            <li className="items" onClick={() => handleNavItemClick('sutias')}>
+              Sutiãs
+            </li>
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<ProductList />} />
+          <Route
+            path="/"
+            element={<ProductList selectedCategory={selectedCategory} />}
+          />
           <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </Router>
