@@ -20,6 +20,15 @@ const ProductList = ({ selectedCategory }) => {
       description: "Esta calcinha é perfeita para o dia a dia",
     },
 
+    {
+      id: 3,
+      name: 'Conjunto íntimo',
+      price: 59.90, 
+      category: 'conjuntos', 
+      image: 'https://http2.mlstatic.com/D_NQ_NP_2X_766616-MLB47177416741_082021-F.jpg',
+      description: "Um conjunto para a noite",
+    },
+
   ];
 
   const filteredProducts = selectedCategory
