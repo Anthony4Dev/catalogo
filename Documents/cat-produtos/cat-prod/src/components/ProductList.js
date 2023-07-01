@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductList = ({ selectedCategory }) => {
+
   const products = [
     {
       id: 1,
@@ -19,7 +20,6 @@ const ProductList = ({ selectedCategory }) => {
       image: 'https://http2.mlstatic.com/D_NQ_NP_2X_971684-MLB48848823458_012022-F.webp',
       description: "Esta calcinha é perfeita para o dia a dia",
     },
-
     {
       id: 3,
       name: 'Conjunto íntimo',
@@ -28,7 +28,6 @@ const ProductList = ({ selectedCategory }) => {
       image: 'https://http2.mlstatic.com/D_NQ_NP_2X_766616-MLB47177416741_082021-F.jpg',
       description: "Um conjunto para a noite",
     },
-
   ];
 
   const filteredProducts = selectedCategory
@@ -49,6 +48,6 @@ const ProductList = ({ selectedCategory }) => {
       ))}
     </div>
   );
-}
+};
 
 export default ProductList;
