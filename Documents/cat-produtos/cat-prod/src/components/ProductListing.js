@@ -1,6 +1,3 @@
-import React from 'react';
-import ProductDetail from './ProductDetail';
-
 function ProductListing({ products }) {
   return (
     <div>
