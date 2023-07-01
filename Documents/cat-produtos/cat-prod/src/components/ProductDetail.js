@@ -5,6 +5,7 @@ const ProductDetail = () => {
   const { id } = useParams();
 
   const [isPurchased, setIsPurchased] = useState(false);
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
 
   const products = [
     {
@@ -23,7 +24,6 @@ const ProductDetail = () => {
       image: 'https://http2.mlstatic.com/D_NQ_NP_2X_971684-MLB48848823458_012022-F.webp',
       description: "Esta calcinha é perfeita para o dia a dia",
     },
-
     {
       id: 3,
       name: 'Conjunto íntimo',
@@ -40,6 +40,11 @@ const ProductDetail = () => {
     return <div>Produto não encontrado</div>;
   }
 
+  const handleBuy = () => {
+    setIsPurchased(true);
+    setIsAddedToCart(true);
+  };
+
   return (
     <div className="product-detail">
       <div className="product-image-container">
@@ -50,13 +55,23 @@ const ProductDetail = () => {
         <p className="product-price">R$ {product.price.toFixed(2)}</p>
         <p className="product-description">{product.description}</p>
         {!isPurchased && (
-            <button className="buy-button" onClick={() => setIsPurchased(true)}>
-              Comprar
-            </button>
+          <button className="buy-button" onClick={handleBuy}>
+            Comprar
+          </button>
+        )}
+        {isAddedToCart && (
+          <div className="cart-notification">Item adicionado ao carrinho!</div>
+        )}
+        <div className="button-container">
+          <Link to="/" className="back-link">
+            Voltar
+          </Link>
+          {!isPurchased && (
+            <Link to="/carrinho" className="secondary-button">
+              Ir para o carrinho
+            </Link>
           )}
-        <Link to="/" className="back-link">
-          Voltar
-        </Link>
+        </div>
       </div>
     </div>
   );
