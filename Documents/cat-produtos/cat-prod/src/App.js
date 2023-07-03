@@ -7,6 +7,7 @@ import ProductDetail from './components/ProductDetail';
 function App() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const toggleNav = () => {
     setIsNavExpanded(!isNavExpanded);
@@ -18,6 +19,10 @@ function App() {
 
   const handleRemoveFilter = () => {
     setSelectedCategory('');
+  };
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
   };
 
   return (
@@ -39,6 +44,9 @@ function App() {
             </li>
             <li className="items" onClick={() => handleNavItemClick('sutias')}>
               Sutiãs
+            </li>
+            <li className="items cart-button" onClick={toggleCart}>
+              Carrinho
             </li>
           </ul>
         </nav>
