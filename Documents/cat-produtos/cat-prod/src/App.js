@@ -46,7 +46,7 @@ function App() {
               Sutiãs
             </li>
             <li className="items cart-button" onClick={toggleCart}>
-              Carrinho
+              Carrinhoooo
             </li>
           </ul>
         </nav>
